@@ -7,9 +7,9 @@ const $daftarTugas = $("#daftarTugas");
 const $inputTanggal = $("#dateInput");
 
 // function edit tambah dan hapus
-btnTambah.addEventListener("click", function(){
-    const teksTugas = inputTugas.value;
-    const tglTugas = inputTanggal.value;
+$btnTambah.click(function(){
+    const teksTugas = $inputTugas.val();
+    const tglTugas = $inputTanggal.val();
 
     if(teksTugas === "" || tglTugas === "") {
         alert("Data harus diisi!");
@@ -26,11 +26,10 @@ btnTambah.addEventListener("click", function(){
         tasks[editIndeks].teksTugas = teksTugas;
         tasks[editIndeks].tglTugas = tglTugas;
         editIndeks = -1;
-        btnTambah.innerText = "Tambah Tugas";
-        btnTambah.style.background = "#0077b6";
+        $btnTambah.text("Tambah Tugas").css("background", "#0077b6");
     }
-    inputTugas.value = "";
-    inputTanggal.value = "";
+    $inputTugas.val("");
+    $inputTanggal.value("");
     render();
 });
 
