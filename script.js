@@ -37,10 +37,10 @@ $btnTambah.click(function(){
 function render() {
     $daftarTugas.empty();
 
-    $.each(tasks, function(item, index) {
+    $.each(tasks, function(index, item) {
         let $listBaru = $("<li>").addClass(item.status);
 
-        $listBaru.HTML(`
+        $listBaru.html(`
         <div>
         <strong>${item.teksTugas}</strong> <br>
         <small>${item.tglTugas}</small>
