@@ -1,10 +1,10 @@
 let tasks=[];
 let editIndeks = -1;
 
-const inputTugas = document.getElementById("inputTugas");
-const btnTambah = document.getElementById("btnTambah");
-const daftarTugas = document.getElementById("daftarTugas");
-const inputTanggal = document.getElementById("dateInput");
+const $inputTugas = $("#inputTugas");
+const $btnTambah = $("#btnTambah");
+const $daftarTugas = $("#daftarTugas");
+const $inputTanggal = $("#dateInput");
 
 // function edit tambah dan hapus
 btnTambah.addEventListener("click", function(){
