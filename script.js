@@ -61,13 +61,13 @@ function render() {
 }
 
 function persiapanEdit(index) {
-    inputTugas.value = tasks[index].teksTugas;
-    inputTanggal.value = tasks[index].tglTugas;
+    $inputTugas.val(tasks[index].teksTugas);
+    $inputTanggal.val(tasks[index].tglTugas);
     
     editIndeks = index; 
-    btnTambah.innerText = "Simpan"; 
-    btnTambah.style.background = "#fbc02d";
-    inputTugas.focus();
+
+    $btnTambah.text("Simpan").css("background", "#fbc02d");
+    $inputTugas.focus();
 }
 
 function hapusTugas(index) {
