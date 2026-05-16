@@ -29,19 +29,18 @@ $btnTambah.click(function(){
         $btnTambah.text("Tambah Tugas").css("background", "#0077b6");
     }
     $inputTugas.val("");
-    $inputTanggal.value("");
+    $inputTanggal.val("");
     render();
 });
 
 // function untuk update list
 function render() {
-    daftarTugas.innerHTML = "";
+    $daftarTugas.empty();
 
-    tasks.forEach(function(item, index) {
-        let listBaru = document.createElement("li");
-        listBaru.classList.add(item.status);
+    $.each(tasks, function(item, index) {
+        let $listBaru = $("<li>").addClass(item.status);
 
-            listBaru.innerHTML = `
+        $listBaru.HTML(`
         <div>
         <strong>${item.teksTugas}</strong> <br>
         <small>${item.tglTugas}</small>
@@ -55,9 +54,9 @@ function render() {
         <button class="edit" onclick="persiapanEdit(${index})">Edit</button>
         <button class="hapus" onclick="hapusTugas(${index})">Hapus</button>
         </div>
-    `;
+    `);
 
-    daftarTugas.appendChild(listBaru);
+    $daftarTugas.append($listBaru);
 });
 }
 
